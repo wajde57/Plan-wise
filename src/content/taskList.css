@@ -1,0 +1,148 @@
+/* TasksList.css — soft, light palette to match TaskDue.css */
+
+:root{
+  --tl-bg: #f7f9fc;
+  --tl-surface: #ffffff;
+  --tl-text: #1f2937;     /* slate-800 */
+  --tl-muted: #6b7280;    /* gray-600 */
+  --tl-border: #e5e7eb;   /* gray-200 */
+
+  --tl-primary: #6d8cff;  /* soft indigo */
+  --tl-primary-2: #eef2ff;
+
+  --tl-accent: #8ad6c2;   /* mint */
+  --tl-accent-2: #e9faf5;
+
+  --tl-shadow: 0 12px 26px rgba(31,41,55,0.08);
+  --tl-radius: 16px;
+}
+
+/* Page container */
+.home-page{
+  max-width: 100%;
+  margin: 0;
+  padding: 20px;
+  background: transparent;
+  min-height: calc(100vh - 80px);
+  color: var(--tl-text);
+}
+
+/* Headings */
+.user-page h1,
+.no-user-page h1{
+  margin: 0 0 10px;
+  font-size: clamp(22px, 3.5vw, 32px);
+  letter-spacing: .2px;
+}
+.task-list-page p,
+.no-task-list-page p{
+  margin: 8px 0 12px;
+  color: var(--tl-text);
+}
+
+/* “Card” sections for empty states and intro */
+.no-user-page,
+.no-task-list-page{
+  /* background: linear-gradient(180deg, var(--tl-surface), var(--tl-accent-2)); */
+  border: 1px solid var(--tl-border);
+  border-radius: var(--tl-radius);
+  padding: 18px 20px;
+  box-shadow: var(--tl-shadow);
+}
+
+.user-page{
+  display: grid;
+  gap: 14px;
+}
+
+/* Button base */
+button{
+  appearance: none;
+  border: 1px solid var(--tl-border);
+  background: var(--tl-surface);
+  color: var(--tl-text);
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .05s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+  box-shadow: 0 1px 0 rgba(17,24,39,0.02);
+}
+button:hover{
+  box-shadow: var(--tl-shadow);
+  transform: translateY(-1px);
+}
+
+/* Primary CTA (use className="btn-primary") */
+.btn-primary{
+  background: var(--tl-primary);
+  color: #fff;
+  border-color: transparent;
+}
+.btn-primary:hover{
+  filter: brightness(1.05);
+  box-shadow: 0 12px 26px rgba(109,140,255,.35);
+}
+
+/* Subtle ghost button */
+.btn-ghost{
+  background: transparent;
+}
+
+/* Task list wrapper */
+.task-list-page{
+  background: var(--tl-surface);
+  border: 1px solid var(--tl-border);
+  border-radius: var(--tl-radius);
+  padding: 14px 16px;
+  box-shadow: var(--tl-shadow);
+}
+
+/* Muted text helper */
+.muted{ color: var(--tl-muted); }
+
+/* Responsive tweaks */
+@media (max-width: 600px){
+  .home-page{ padding: 16px; }
+}
+/* Layout the two screenshots side-by-side; stack on mobile */
+.hero-showcase{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+  margin-top: 18px;
+}
+
+/* The frame gives the rounded corners + shadow; it clips the image neatly */
+.shot-frame{
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.12);
+  overflow: hidden;                 /* important for clean rounded corners */
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.shot-frame:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
+}
+
+/* Key: keep the image’s natural aspect ratio */
+.shot{
+  display: block;
+  width: 100%;
+  height: auto;                     /* <- no forced aspect-ratio */
+  image-rendering: auto;
+}
+
+/* If your screenshots are very tall, you can cap height: */
+/* .shot{ max-height: 480px; object-fit: contain; background: #fff; } */
+
+@media (max-width: 900px){
+  .hero-showcase{ grid-template-columns: 1fr; gap: 12px; }
+}
+.shot-frame:nth-child(1){ transform: rotate(-1deg); }
+.shot-frame:nth-child(2){ transform: rotate( 1deg); }
+.shot-frame:hover{ transform: translateY(-4px) rotate(0); }

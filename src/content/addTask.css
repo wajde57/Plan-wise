@@ -1,0 +1,145 @@
+/* AddTask.css — light pastel form */
+
+:root{
+  --at-bg: #f7f9fc;
+  --at-surface: #ffffff;
+  --at-text: #1f2937;        /* slate-800 */
+  --at-muted: #6b7280;       /* gray-600 */
+  --at-border: #e5e7eb;      /* gray-200 */
+
+  --at-primary: #6d8cff;     /* soft indigo */
+  --at-primary-2: #eef2ff;   /* indigo-50 */
+
+  --at-shadow: 0 12px 26px rgba(31,41,55,0.08);
+  --at-radius: 16px;
+}
+
+.addtask-wrap{
+  min-height: calc(100dvh - 60px);
+  display: grid;
+  place-items: start center;
+  background: var(--at-bg);
+  padding: 24px;
+  color: var(--at-text);
+}
+
+.addtask-card{
+  width: 100%;
+  max-width: 560px;
+  background: var(--at-surface);
+  border: 1px solid var(--at-border);
+  border-radius: var(--at-radius);
+  box-shadow: var(--at-shadow);
+  padding: 22px;
+}
+
+.addtask-card h1{
+  margin: 0 0 12px;
+  font-size: clamp(20px, 3.2vw, 26px);
+  letter-spacing: .2px;
+}
+
+/* labels + inputs */
+.addtask-card label{
+  display: block;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 12px 0 6px;
+}
+
+.addtask-card input[type="text"],
+.addtask-card input[type="date"],
+.addtask-card textarea{
+  width: 100%;
+  background: #fff;
+  color: var(--at-text);
+  border: 1px solid var(--at-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+  box-shadow: 0 1px 0 rgba(17,24,39,0.02);
+}
+
+.addtask-card textarea{
+  min-height: 120px;
+  resize: vertical;
+}
+
+.addtask-card input:focus,
+.addtask-card textarea:focus{
+  border-color: var(--at-primary);
+  box-shadow: 0 0 0 4px var(--at-primary-2);
+}
+
+/* fieldset of labels (Urgent/Important/Ongoing) */
+.addtask-card fieldset{
+  border: 1px dashed var(--at-border);
+  border-radius: 14px;
+  background: #fff;
+  padding: 12px 14px 10px;
+  margin: 14px 0 8px;
+}
+.addtask-card legend{
+  padding: 0 6px;
+  font-size: 13px;
+  color: var(--at-muted);
+}
+.addtask-card fieldset label{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 12px 6px 0;
+  font-weight: 500;
+  color: var(--at-text);
+}
+.addtask-card fieldset input[type="checkbox"]{
+  width: 18px; height: 18px;
+  accent-color: var(--at-primary);
+}
+
+/* actions */
+.addtask-actions{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.addtask-actions button{
+  appearance: none;
+  border: 1px solid var(--at-border);
+  background: var(--at-surface);
+  color: var(--at-text);
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .1 ease-in-out, box-shadow .2s ease, background .2s ease;
+  box-shadow: 0 1px 0 rgba(17,24,39,0.02);
+}
+.addtask-actions button:hover{
+  transform: translateY(-1px);
+  box-shadow: var(--at-shadow);
+}
+.addtask-actions .btn-primary{
+  background: var(--at-primary);
+  color: #fff;
+  border-color: transparent;
+}
+.addtask-actions .btn-primary:hover{
+  filter: brightness(1.2);
+  box-shadow: 0 12px 26px rgba(109,140,255,.35);
+}
+
+/* message */
+.addtask-msg{
+  margin-top: 10px;
+  font-weight: 700;
+  color: #b91c1c; /* red-700 for errors; override in-line if success */
+}
+
+/* small responsive */
+@media (max-width: 640px){
+  .addtask-card{ padding: 18px; }
+}

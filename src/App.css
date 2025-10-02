@@ -1,0 +1,36 @@
+/* Theme tokens (global) */
+:root{
+  --bg: #f7f9fc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --primary: #6d8cff;
+  --primary-2: #eef2ff;
+  --accent: #0f766e;             /* light accent (teal) */
+  --shadow-lg: 0 18px 44px rgba(31,41,55,.12);
+  --shadow-md: 0 10px 24px rgba(31,41,55,.10);
+  --radius: 16px;
+
+  --page-bg: #f7f9fc;
+}
+
+html[data-theme="dark"]{
+  --bg: #0b1220;
+  --surface: #101828;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --border: #1f2937;
+  --primary: #8ea1ff;
+  --primary-2: rgba(141,162,255,.15);
+  --accent: #22d3ee;             /* cyan pop on dark */
+  --page-bg: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+}
+
+/* page sizing + background */
+:root { --page-bg: #f7f9fc; }                     /* light */
+html[data-theme="dark"] { --page-bg: #0b1220; }   /* solid dark base */
+
+html, body, #root { height: 100%; }
+body { margin: 0; background: var(--page-bg); }
+

@@ -1,0 +1,136 @@
+/* Signup.css — light pastel card for the signup screen */
+
+:root{
+  --su-bg: #f7f9fc;
+  --su-surface: #ffffff;
+  --su-text: #1f2937;       /* slate-800 */
+  --su-muted: #6b7280;      /* gray-600 */
+  --su-border: #e5e7eb;     /* gray-200 */
+
+  --su-primary: #6d8cff;    /* soft indigo */
+  --su-primary-2: #eef2ff;  /* indigo-50 */
+  --su-shadow: 0 12px 26px rgba(31,41,55,0.08);
+  --su-radius: 16px;
+}
+
+.signup-container{
+  min-height: calc(100dvh - 60px);
+  display: grid;
+  place-items: center;
+  background: var(--su-bg);
+  padding: 24px;
+  color: var(--su-text);
+}
+
+.box-container{
+  width: 100%;
+  max-width: 520px;
+  background: var(--su-surface);
+  border: 1px solid var(--su-border);
+  border-radius: var(--su-radius);
+  box-shadow: var(--su-shadow);
+  padding: 22px 22px 18px;
+}
+
+.box-container h2{
+  margin: 0 0 12px;
+  font-size: clamp(20px, 3.2vw, 26px);
+  letter-spacing: .2px;
+}
+
+/* inputs */
+.box-container input[type="text"],
+.box-container input[type="email"],
+.box-container input[type="password"],
+.box-container input[type="date"]{
+  width: 100%;
+  background: #fff;
+  color: var(--su-text);
+  border: 1px solid var(--su-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+  box-shadow: 0 1px 0 rgba(17,24,39,0.02);
+  margin: 8px 0;
+}
+.box-container input:focus{
+  border-color: var(--su-primary);
+  box-shadow: 0 0 0 4px var(--su-primary-2);
+}
+
+.box-container label{
+  display: block;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 10px 0 6px;
+}
+
+/* terms row */
+.terms-row{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0 2px;
+}
+.terms-row input[type="checkbox"]{
+  width: 18px; height: 18px;
+  accent-color: var(--su-primary);
+}
+
+/* actions */
+.box-actions{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 12px 0 6px;
+}
+
+/* buttons */
+.box-actions button{
+  appearance: none;
+  border: 1px solid var(--su-border);
+  background: var(--su-surface);
+  color: var(--su-text);
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .05s ease, box-shadow .2s ease, background .2s ease;
+  box-shadow: 0 1px 0 rgba(17,24,39,0.02);
+}
+.box-actions button:hover{
+  transform: translateY(-1px);
+  box-shadow: var(--su-shadow);
+  background: #fff;
+}
+.btn-primary{
+  background: var(--su-primary);
+  color: #fff;
+  border-color: transparent;
+}
+.btn-primary:hover{
+  filter: brightness(1.05);
+  box-shadow: 0 12px 26px rgba(109,140,255,.35);
+}
+
+/* links */
+.box-actions a{
+  color: var(--su-text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 4px 6px;
+  border-radius: 8px;
+}
+.box-actions a:hover{
+  background: var(--su-primary-2);
+}
+
+/* error */
+.error{
+  color: #b91c1c;           /* red-700 */
+  font-weight: 700;
+  display: block;
+  margin-top: 6px;
+}
