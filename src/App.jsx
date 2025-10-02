@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { UserContext } from "./Registration/userContext";
 import './App.css'
 
-import Login from "./Registration/Login";
+import Login from "./Registration/login";
 import Signup from "./Registration/signup"; // make sure path/case matches your file
 import AddTask from "./content/AddTask";
 import NavBar from "./navbar/NavBar";
