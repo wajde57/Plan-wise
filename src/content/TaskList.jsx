@@ -61,7 +61,7 @@ function TasksList() {
         { !user && 
             <section className='no-user-page'>
                 <h1 style={{color: theme.getTheme === 'Dark' ? 'black' : 'teal'}}>
-                    PlanWise - חוכמת תכנון
+                    PlanWise
                 </h1>
                 <p style={{ color: theme.getTheme === 'Dark' ? 'black' : 'teal', fontSize: '18px'}}>
                     <strong>Take control of your day.</strong>
@@ -92,7 +92,7 @@ function TasksList() {
         { user && 
             <div className='user-page'>
                 <h1 style={{ color: theme.getTheme === 'Dark' ? 'black' : 'teal' }}>
-                    PlanWise - חוכמת תכנון
+                    PlanWise
                 </h1>
                 
                 {tasks.length === 0 ? (
